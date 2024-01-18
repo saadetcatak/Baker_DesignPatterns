@@ -1,9 +1,13 @@
+using Baker_DesignPatterns.CQRSPattern.Handlers;
 using Baker_DesignPatterns.DAL.Context;
+using Baker_DesignPatterns.DAL.Entities;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<BakerContext>();
+builder.Services.AddScoped<GetAboutQueryHandler>();
+builder.Services.AddScoped<GetProductQueryHandler>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

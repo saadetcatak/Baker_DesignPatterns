@@ -8,10 +8,12 @@
 
   <ItemGroup>
     <Folder Include="CQRSPattern\Commands\" />
-    <Folder Include="CQRSPattern\Handlers\" />
-    <Folder Include="CQRSPattern\Results\" />
     <Folder Include="CQRSPattern\Queries\" />
     <Folder Include="ChainOfResponsibility\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\PurpleAdmin\.DS_Store" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +27,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0" />
   </ItemGroup>
 
 </Project>
