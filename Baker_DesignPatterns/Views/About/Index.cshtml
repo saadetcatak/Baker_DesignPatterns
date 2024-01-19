@@ -14,6 +14,8 @@
                     <tr>
                         <th> #</th>
                         <th> Hakkımızda</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
                        
                     </tr>
                 </thead>
@@ -23,11 +25,32 @@
                         count++;
                         <tr>
                             <td> @count</td>
-                            <td>@item.Article</td>                          
+                            <td>@item.Article</td>
+                            <td><a href="#" onclick="return deleteAbout('@item.AboutID')" class="btn btn-outline-danger"><i class="fas fa-trash"></i>Sil</a></td>
+                            <td><a href="/About/UpdateAbout/@item.AboutID" class="btn btn-outline-success"><i class="fas fa-pen"></i> Güncelle</a></td>
                         </tr>
                     }
                 </tbody>
             </table>
+            <a href="/About/CreateAbout/" class="btn btn-outline-primary"><i class="fas fa-plus-circle"></i> Yeni Yetkinlik Girişi</a>
         </div>
+       
     </div>
 </div>
+
+<script>
+    function deleteAbout(id) {
+        Swal.fire({
+            title: 'Silmek istediğinize emin misiniz?',
+            text: 'Bu öğeyi silerseniz geri alamazsınız!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sil',
+            cancelButtonText: 'İptal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/About/DeleteAbout?id=" + id;
+            }
+        });
+    }
+</script>

@@ -3,7 +3,62 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
 }
 
-<h1>Index</h1>
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
 
+<div class="col-lg-12 grid-margin">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Ürünler</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th> #</th>
+                        <th>Görsel</th>
+                        <th> Başlık</th>
+                        <th> Açıklama</th>
+                        <th> Fiyat</th>
+                        <th>Sil</th>
+                        <th>Güncele</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        count++;
+                        <tr>
+                            <td> @count</td>
+                            <td><img src="@item.ImageUrl" style="height:75px;width:75px" /></td>
+                            <td>@item.Title</td>
+                            <td>@item.Description</td>
+                            <td>@item.Price ₺</td>
+                            <td><a href="#" onclick="return deleteProduct('@item.ProductID')" class="btn btn-outline-danger"><i class="fas fa-trash"></i>Sil</a></td>
+                            <td><a href="/Product/UpdateProduct/@item.ProductID" class="btn btn-outline-success"><i class="fas fa-pen"></i> Güncelle</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <a href="/Product/CreateProduct/" class="btn btn-outline-primary"><i class="fas fa-plus-circle"></i> Yeni Ürün Girişi</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function deleteProduct(id) {
+        Swal.fire({
+            title: 'Silmek istediğinize emin misiniz?',
+            text: 'Bu öğeyi silerseniz geri alamazsınız!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sil',
+            cancelButtonText: 'İptal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/Product/DeleteProduct?id=" + id;
+            }
+        });
+    }
+</script>

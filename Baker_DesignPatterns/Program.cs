@@ -8,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<BakerContext>();
 builder.Services.AddScoped<GetAboutQueryHandler>();
 builder.Services.AddScoped<GetProductQueryHandler>();
+builder.Services.AddScoped<CreateAboutCommandHandler>();
+builder.Services.AddScoped<CreateProductCommandHandler>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

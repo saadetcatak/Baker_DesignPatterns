@@ -7,8 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CQRSPattern\Commands\" />
-    <Folder Include="CQRSPattern\Queries\" />
     <Folder Include="ChainOfResponsibility\" />
   </ItemGroup>
 
