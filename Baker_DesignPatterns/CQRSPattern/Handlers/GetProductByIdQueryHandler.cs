@@ -13,7 +13,7 @@ namespace Baker_DesignPatterns.CQRSPattern.Handlers
             _context = context;
         }
 
-        public GetProductByIdQueryResult Handle(GetAboutByIdQuery query)
+        public GetProductByIdQueryResult Handle(GetProductByIdQuery query)
         {
             var values = _context.Products.Find(query.Id);
             return new GetProductByIdQueryResult

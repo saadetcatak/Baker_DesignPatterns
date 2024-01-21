@@ -1,0 +1,33 @@
+﻿@model Baker_DesignPatterns.CQRSPattern.Results.GetProductByIdQueryResult
+@{
+    ViewData["Title"] = "UpdateProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Ürün Güncelleme Sayfası</h3>
+            <hr style="color:purple;" />
+            <table class="table table-striped">
+                <form method="post">
+                    <input type="hidden" asp-for="ProductID"/>                   
+                    <div class="text-center align-text-center justify-content-center">
+                        <img src="@Model.ImageUrl" style="height:150px; width:150px; border-radius:50%" />
+                    </div>
+                    <br />
+                    <label>Başlık</label>
+                    <input type="text" class="form-control" asp-for="Title" />
+                    <br />
+                    <label>Açıklama</label>
+                    <input type="text" class="form-control" asp-for="Description" />
+                    <br />                 
+                    <label>Fiyat</label>
+                    <input type="text" class="form-control" asp-for="Price" />
+                    <br />
+                    <button class="btn btn-outline-primary"><i class="fas fa-save"></i>Kaydet</button>
+                </form>
+            </table>
+        </div>
+
+    </div>
+</div>

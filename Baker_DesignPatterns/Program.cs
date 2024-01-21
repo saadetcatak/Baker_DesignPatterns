@@ -10,6 +10,12 @@ builder.Services.AddScoped<GetAboutQueryHandler>();
 builder.Services.AddScoped<GetProductQueryHandler>();
 builder.Services.AddScoped<CreateAboutCommandHandler>();
 builder.Services.AddScoped<CreateProductCommandHandler>();
+builder.Services.AddScoped<GetAboutByIdQueryHandler>();
+builder.Services.AddScoped<GetProductByIdQueryHandler>();
+builder.Services.AddScoped<UpdateAboutCommandHandler>();
+builder.Services.AddScoped<UpdateProductCommandHandler>();
+builder.Services.AddScoped<RemoveAboutCommandHandler>();
+builder.Services.AddScoped<RemoveProductCommandHandler>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
