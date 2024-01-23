@@ -2,6 +2,7 @@ using Baker_DesignPatterns.CQRSPattern.Handlers;
 using Baker_DesignPatterns.DAL.Context;
 using Baker_DesignPatterns.DAL.Entities;
 using Microsoft.AspNetCore.Cors.Infrastructure;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,10 @@ builder.Services.AddScoped<UpdateAboutCommandHandler>();
 builder.Services.AddScoped<UpdateProductCommandHandler>();
 builder.Services.AddScoped<RemoveAboutCommandHandler>();
 builder.Services.AddScoped<RemoveProductCommandHandler>();
+
+
+builder.Services.AddMediatR(cfg=>cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
