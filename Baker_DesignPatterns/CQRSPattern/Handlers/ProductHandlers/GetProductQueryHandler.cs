@@ -1,4 +1,5 @@
-﻿using Baker_DesignPatterns.CQRSPattern.Results.ProductResults;
+﻿
+using Baker_DesignPatterns.CQRSPattern.Results.ProductResults;
 using Baker_DesignPatterns.DAL.Context;
 
 namespace Baker_DesignPatterns.CQRSPattern.Handlers.ProductHandlers

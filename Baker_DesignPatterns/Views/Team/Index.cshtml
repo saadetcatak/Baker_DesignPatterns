@@ -1,0 +1,45 @@
+﻿@model List<Baker_DesignPatterns.CQRSPattern.Results.TeamResults.GetTeamQueryResult>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+
+<div class="col-lg-12 grid-margin">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Personeller</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th> #</th>
+                        <th>Görsel</th>
+                        <th> Başlık</th>
+                        <th>İsim Soyisim</th>                      
+                        <th>Sil</th>
+                        <th>Güncele</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        count++;
+                        <tr>
+                            <td> @count</td>
+                            <td><img src="@item.ImageUrl" style="height:75px;width:75px" /></td>
+                            <td>@item.Title</td>
+                            <td>@item.NameSurname</td>
+
+                            <td><a href="/Team/DeleteTeam/@item.TeamID" class="btn btn-outline-danger"><i class="fas fa-trash"></i>Sil</a></td>
+                            <td><a href="/Team/UpdateTeam/@item.TeamID" class="btn btn-outline-success"><i class="fas fa-pen"></i> Güncelle</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <a href="/Team/CreateTeam/" class="btn btn-outline-primary"><i class="fas fa-plus-circle"></i> Yeni Personel Girişi</a>
+        </div>
+    </div>
+</div>
