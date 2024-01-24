@@ -1,5 +1,6 @@
-﻿using Baker_DesignPatterns.MediatorPattern.Commands;
-using Baker_DesignPatterns.MediatorPattern.Queries;
+﻿
+using Baker_DesignPatterns.MediatorPattern.Commands.ServiceCommands;
+using Baker_DesignPatterns.MediatorPattern.Queries.ServiceQueries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

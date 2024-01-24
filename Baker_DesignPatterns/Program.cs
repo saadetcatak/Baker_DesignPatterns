@@ -1,4 +1,5 @@
-using Baker_DesignPatterns.CQRSPattern.Handlers;
+using Baker_DesignPatterns.CQRSPattern.Handlers.AboutHandlers;
+using Baker_DesignPatterns.CQRSPattern.Handlers.ProductHandlers;
 using Baker_DesignPatterns.DAL.Context;
 using Baker_DesignPatterns.DAL.Entities;
 using Microsoft.AspNetCore.Cors.Infrastructure;

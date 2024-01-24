@@ -1,6 +1,7 @@
-﻿using Baker_DesignPatterns.CQRSPattern.Commands;
-using Baker_DesignPatterns.CQRSPattern.Handlers;
-using Baker_DesignPatterns.CQRSPattern.Queries;
+﻿
+using Baker_DesignPatterns.CQRSPattern.Commands.AboutCommands;
+using Baker_DesignPatterns.CQRSPattern.Handlers.AboutHandlers;
+using Baker_DesignPatterns.CQRSPattern.Queries.AboutQueries;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Baker_DesignPatterns.Controllers
@@ -59,7 +60,7 @@ namespace Baker_DesignPatterns.Controllers
 
         public IActionResult DeleteAbout(int id)
         {
-            _removeAboutCommandHandler.Handle(new RemoveProductCommand(id));
+            _removeAboutCommandHandler.Handle(new RemoveAboutCommand(id));
             return RedirectToAction("Index");
         }
     }

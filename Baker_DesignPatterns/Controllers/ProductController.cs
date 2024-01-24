@@ -1,6 +1,6 @@
-﻿using Baker_DesignPatterns.CQRSPattern.Commands;
-using Baker_DesignPatterns.CQRSPattern.Handlers;
-using Baker_DesignPatterns.CQRSPattern.Queries;
+﻿using Baker_DesignPatterns.CQRSPattern.Commands.ProductCommands;
+using Baker_DesignPatterns.CQRSPattern.Handlers.ProductHandlers;
+using Baker_DesignPatterns.CQRSPattern.Queries.ProductQueries;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Baker_DesignPatterns.Controllers

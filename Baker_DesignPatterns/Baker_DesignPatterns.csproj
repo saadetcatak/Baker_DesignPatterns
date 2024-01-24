@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ChainOfResponsibility\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\PurpleAdmin\.DS_Store" />
   </ItemGroup>
 

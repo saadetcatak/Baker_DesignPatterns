@@ -1,4 +1,17 @@
 ﻿@using Baker_DesignPatterns
 @using Baker_DesignPatterns.Models
 @using Baker_DesignPatterns.DAL.Entities
+@using Baker_DesignPatterns.CQRSPattern.Commands.AboutCommands
+@using Baker_DesignPatterns.CQRSPattern.Commands.ProductCommands
+@using Baker_DesignPatterns.CQRSPattern.Results.AboutResults
+@using Baker_DesignPatterns.CQRSPattern.Results.ProductResults
+@using Baker_DesignPatterns.CQRSPattern.Queries.AboutQueries
+@using Baker_DesignPatterns.CQRSPattern.Queries.ProductQueries
+@using Baker_DesignPatterns.CQRSPattern.Handlers.AboutHandlers
+@using Baker_DesignPatterns.CQRSPattern.Handlers.ProductHandlers
+@using Baker_DesignPatterns.MediatorPattern.Commands.ServiceCommands
+@using Baker_DesignPatterns.MediatorPattern.Results.ServiceResults
+@using Baker_DesignPatterns.MediatorPattern.Queries.ServiceQueries
+@using Baker_DesignPatterns.MediatorPattern.Handlers.ServiceHandlers
+
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
