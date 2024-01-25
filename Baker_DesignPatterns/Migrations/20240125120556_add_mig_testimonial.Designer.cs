@@ -3,6 +3,7 @@ using Baker_DesignPatterns.DAL.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Baker_DesignPatterns.Migrations
 {
     [DbContext(typeof(BakerContext))]
-    partial class BakerContextModelSnapshot : ModelSnapshot
+    [Migration("20240125120556_add_mig_testimonial")]
+    partial class add_mig_testimonial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
