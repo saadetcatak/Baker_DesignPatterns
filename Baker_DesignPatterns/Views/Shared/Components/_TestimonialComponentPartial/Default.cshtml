@@ -1,0 +1,24 @@
+﻿@model List<Baker_DesignPatterns.MediatorPattern.Results.TestimonialResults.GetAllTestimonialQueryResult>
+
+<div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+    <p class="text-primary text-uppercase mb-2">// Müşteri Değerlendirmesi</p>
+    <h1 class="display-6 mb-4">20.000'den Fazla Müşteri Bize Güvendi</h1>
+</div>
+<div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+
+    @foreach(var item in Model)
+    {
+    <div class="testimonial-item bg-white rounded p-4">
+        <div class="d-flex align-items-center mb-4">
+            <img class="flex-shrink-0 rounded-circle border p-1" src="@item.ImageUrl" alt="">
+            <div class="ms-4">
+                <h5 class="mb-1">@item.NameSurname</h5>
+                <span>@item.Title</span>
+            </div>
+        </div>
+        <p class="mb-0">@item.Comment.</p>
+    </div>
+    
+    }
+    
+</div>

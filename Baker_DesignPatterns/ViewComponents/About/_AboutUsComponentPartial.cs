@@ -1,5 +1,4 @@
 ﻿using Baker_DesignPatterns.CQRSPattern.Handlers.AboutHandlers;
-using Baker_DesignPatterns.DAL.Context;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Baker_DesignPatterns.ViewComponents.About
