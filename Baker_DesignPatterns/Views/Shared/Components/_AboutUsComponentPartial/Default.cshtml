@@ -1,0 +1,35 @@
+﻿@model List<Baker_DesignPatterns.CQRSPattern.Results.AboutResults.GetAboutQueryResult>
+<div class="container-xxl py-6">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="row img-twice position-relative h-100">
+                    <div class="col-6">
+                        <img class="img-fluid rounded" src="~/baker-1.0.0/img/about-1.jpg" alt="">
+                    </div>
+                    <div class="col-6 align-self-end">
+                        <img class="img-fluid rounded" src="~/baker-1.0.0/img/about-2.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="h-100">
+                    <p class="text-primary text-uppercase mb-2">// Hakkımızda</p>
+                    <h1 class="display-6 mb-4">Her Ürünü Kalbimizin Özünden Pişiriyoruz</h1>
+                    <p>Siz ve sevdikleriniz için en güzelini hazırlamak ve size sunmak için yıllardır kendimizi hep ileriye taşıyoruz.</p>
+                    <p>Sektörün öncüsü olarak yeniliklere ışık tutmak ve gelişime her zaman açık olarak değerlerimizle bu yolda devam ediyoruz.</p>
+                    <div class="row g-2 mb-4">
+                        @foreach(var item in Model)
+                        {
+                        <div class="col-sm-6">
+                            <i class="fa fa-check text-primary me-2"></i>@item.Article
+                        </div>
+                        }
+                                               
+                    </div>
+                    <a class="btn btn-primary rounded-pill py-3 px-5" href="">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

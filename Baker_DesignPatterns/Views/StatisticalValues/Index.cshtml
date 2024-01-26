@@ -1,22 +1,25 @@
-﻿@model List<GetAllServiceQueryResult>
+﻿@using Baker_DesignPatterns.MediatorPattern.Results.StatisticalValuesResults
+@model List<GetAllStatisticalValuesQueryResult>
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
     int count = 0;
 }
+
 <link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
 
 <div class="col-lg-12 grid-margin">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Ürünler</h4>
+            <h4 class="card-title">İstatistikler</h4>
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th> #</th>
                         <th> Başlık</th>
-                        <th> Açıklama</th>
-
+                        <th> Değer</th>
+                        <th> İkon</th>
                         <th>Sil</th>
                         <th>Güncele</th>
 
@@ -29,15 +32,15 @@
                         <tr>
                             <td> @count</td>
                             <td>@item.Title</td>
-                            <td>@item.Description</td>
-                          
-                            <td><a href="/Service/DeleteService/@item.ServiceID" class="btn btn-outline-danger"><i class="fas fa-trash"></i>Sil</a></td>
-                            <td><a href="/Service/UpdateService/@item.ServiceID" class="btn btn-outline-success"><i class="fas fa-pen"></i> Güncelle</a></td>
+                            <td>@item.Value</td>
+                            <td>@item.Icon</td>
+                            <td><a href="/StatisticalValues/DeleteStatisticalValues/@item.StatisticalValuesID" class="btn btn-outline-danger"><i class="fas fa-trash"></i>Sil</a></td>
+                            <td><a href="/StatisticalValues/UpdateStatisticalValues/@item.StatisticalValuesID" class="btn btn-outline-success"><i class="fas fa-pen"></i> Güncelle</a></td>
                         </tr>
                     }
                 </tbody>
             </table>
-            <a href="/Service/CreateService/" class="btn btn-outline-primary"><i class="fas fa-plus-circle"></i> Yeni Hizmet Girişi</a>
+            <a href="/StatisticalValues/CreateStatisticalValues/" class="btn btn-outline-primary"><i class="fas fa-plus-circle"></i> Yeni Hizmet Girişi</a>
         </div>
     </div>
 </div>
