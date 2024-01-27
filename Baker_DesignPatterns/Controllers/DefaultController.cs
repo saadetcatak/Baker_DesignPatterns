@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Baker_DesignPatterns.DAL.Context;
+using Baker_DesignPatterns.DAL.Entities;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Baker_DesignPatterns.Controllers
 {
@@ -8,5 +10,22 @@ namespace Baker_DesignPatterns.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public PartialViewResult Subscribe()
+        {
+            return PartialView();
+        }
+
+        [HttpPost]
+        public IActionResult Subscribe(Subscribe subscribe)
+        {
+            BakerContext context = new BakerContext();
+            context.Add(subscribe);
+            context.SaveChanges();
+            return NoContent();
+
+        }
     }
 }
+
