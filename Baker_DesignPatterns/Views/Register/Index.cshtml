@@ -1,0 +1,97 @@
+﻿@model RegisterViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Purple Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="~/PurpleAdmin/assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/PurpleAdmin/assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="~/PurpleAdmin/assets/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="~/PurpleAdmin/assets/images/favicon.ico" />
+</head>
+<body>
+    <div class="container-scroller">
+        <div class="container-fluid page-body-wrapper full-page-wrapper">
+            <div class="content-wrapper d-flex align-items-center auth">
+                <div class="row flex-grow">
+                    <div class="col-lg-4 mx-auto">
+                        <div class="auth-form-light text-left p-5">
+                            <div class="brand-logo">
+                                <img src="~/PurpleAdmin//assets/images/logo.svg">
+                            </div>
+                            <h4>Kayıt Sayfası</h4>
+                            <h6 class="font-weight-light">Kayıt olmak çok kolay.Adımları takip et.</h6>
+                            <form method="post">
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-lg" asp-for="UserName" placeholder="Kullanıcı Adı">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control form-control-lg" asp-for="Email" placeholder="Mail Adresi">
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control form-control-lg" asp-for="Country">
+                                        <option>Ülke</option>
+                                        <option>United States of America</option>
+                                        <option>United Kingdom</option>
+                                        <option>India</option>
+                                        <option>Germany</option>
+                                        <option>Argentina</option>
+                                        <option>Turkey</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control form-control-lg" asp-for="Password" placeholder="Şifre">
+                                </div>
+                                <div class="mb-4">
+                                    <div class="form-check">
+                                        <label class="form-check-label text-muted">
+                                            <input type="checkbox" class="form-check-input">Tüm Şartlar ve Koşulları Kabul Ediyorum
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <input type="submit" class="form-submit" value="Kayıt Ol" />
+                                </div>
+                                <div class="text-center mt-4 font-weight-light">
+                                   
+                                        Giriş Yapmak İster Misin ? <a asp-action="Index" asp-controller="Login" class="btn btn-danger">Giriş Yap
+                                    </a>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="~/PurpleAdmin/assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="~/PurpleAdmin/assets/js/off-canvas.js"></script>
+    <script src="~/PurpleAdmin/assets/js/hoverable-collapse.js"></script>
+    <script src="~/PurpleAdmin/assets/js/misc.js"></script>
+    <!-- endinject -->
+</body>
+</html>

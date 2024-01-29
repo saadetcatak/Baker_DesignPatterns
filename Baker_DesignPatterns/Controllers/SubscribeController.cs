@@ -23,7 +23,8 @@ namespace Baker_DesignPatterns.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var values= _getSubscribeQueryHandler.Handle();
+            return View(values);
         }
         public IActionResult DeleteSubscribe(int id)
         {

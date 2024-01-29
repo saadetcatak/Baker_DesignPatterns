@@ -1,8 +1,22 @@
-﻿
+﻿@model Baker_DesignPatterns.CQRSPattern.Results.SubscribeResults.GetSubscribeByIdQueryResult
 @{
     ViewData["Title"] = "DetailSubscribe";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>DetailSubscribe</h1>
 
+<div class="row">
+    <div class="col-md-12 stretch-card grid-margin">
+        <div class="card bg-gradient-danger card-img-holder text-white">
+            <div class="card-body">
+                <img src="~/PurpleAdmin/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                <h3>Abone Detayları</h3>
+                <h4 class="font-weight-normal mb-3">
+                    <i class="mdi mdi-account-box">Abone Mail Adresi</i>
+                </h4>
+                <h2 class="mb-5">@Model.Mail</h2>
+                <h6 class="card-text"></h6>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,8 +1,41 @@
-﻿
+﻿@model List<Baker_DesignPatterns.CQRSPattern.Results.SubscribeResults.GetSubscribeQueryResult>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
 }
 
-<h1>Index</h1>
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Aboneler</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th> #</th>
+                        <th> Hakkımızda</th>
+                        <th>Sil</th>
+                        <th>Detay</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        count++;
+                        <tr>
+                            <td>@count</td>
+                            <td>@item.Mail</td>
+                            <td><a href="/Subscribe/DeleteSubscribe/@item.SubscribeID" class="btn btn-outline-danger"><i class="fas fa-trash"></i>Sil</a></td>
+                            <td><a href="/Subscribe/DetailSubscribe/@item.SubscribeID" class="btn btn-gradient-light btn-rounded btn-fw"><i class="fas fa-pen"></i>Detay</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
 

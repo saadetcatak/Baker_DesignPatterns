@@ -1,10 +1,12 @@
 ﻿using Baker_DesignPatterns.DAL.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+
 using System.Reflection.Metadata.Ecma335;
 
 namespace Baker_DesignPatterns.DAL.Context
 {
-    public class BakerContext:DbContext
+    public class BakerContext:IdentityDbContext<AppUser,AppRole,int>
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -18,6 +20,7 @@ namespace Baker_DesignPatterns.DAL.Context
         public DbSet<Subscribe> Subscribe { get; set; }
         public DbSet<Team> Teams { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
-        
-    }
+
 }
+}
+

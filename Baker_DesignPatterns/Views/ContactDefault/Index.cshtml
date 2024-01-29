@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+
+
+<!-- Navbar End -->
+<!-- Page Header Start -->
+<div class="container-fluid page-header py-6 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container text-center pt-5 pb-3">
+        <h1 class="display-4 text-white animated slideInDown mb-3">Bizimle İletişime Geç</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a class="text-white" href="#">Ana Sayfa</a></li>                
+                <li class="breadcrumb-item text-primary active" aria-current="page">İletişim</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Contact Start -->
+@await Html.PartialAsync("SendMessagePartial")
+<!-- Contact End -->
+<!-- Google Map Start -->
+<div class="container-xxl py-6 px-0 wow fadeInUp" data-wow-delay="0.1s">
+    <iframe class="w-100 mb-n2" style="height: 450px;"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8908.178525505406!2d32.4826056272931!3d37.87159693294301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d085a632d6cd91%3A0xa29477839fe600e8!2zS8O8bHTDvHIgUGFyaw!5e0!3m2!1str!2str!4v1706534719145!5m2!1str!2str"
+            frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+</div>
+<!-- Google Map End -->
+

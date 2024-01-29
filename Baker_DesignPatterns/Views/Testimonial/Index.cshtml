@@ -22,7 +22,6 @@
                         <th> Başlık</th>
                         <th>İsim Soyisim</th>
                         <th>Yorum</th>
-                        <th>AnaSayfa</th>
                         <th>Durum</th>
                         <th>Sil</th>
                         <th>Güncele</th>
@@ -39,18 +38,6 @@
                             <td>@item.Title</td>
                             <td>@item.NameSurname</td>
                             <td>@item.Comment</td>
-                            <td>
-                                @{
-                                    if (item.IsHome == true)
-                                    {
-                                        <button onclick="updateHomeStatus(@item.TestimonialID)" type="submit" class="btn btn-success">Ekle</button>
-                                    }
-                                    else
-                                    {
-                                        <button onclick="updateHomeStatus(@item.TestimonialID)" type="submit" class="btn btn-danger">Çıkar</button>
-                                    }
-                                }
-                            </td>
                             <td>
                                 @{
                                     if (item.Status == true)
@@ -70,7 +57,7 @@
                     }
                 </tbody>
             </table>
-            <a href="/Testimonial/CreateTestimonial/" class="btn btn-outline-primary"><i class="fas fa-plus-circle"></i> Yeni Personel Girişi</a>
+            <a href="/Testimonial/CreateTestimonial/" class="btn btn-gradient-light btn-rounded btn-fw"><i class="fas fa-plus-circle"></i> Yeni Personel Girişi</a>
         </div>
     </div>
 </div>

@@ -1,0 +1,46 @@
+﻿@model Baker_DesignPatterns.CQRSPattern.Results.ContactResults.GetContactQueryResult
+
+<div class="container-xxl py-6">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <p class="text-primary text-uppercase mb-2">// BİZE ULAŞIN</p>
+            <h1 class="display-6 mb-4">Herhangi Bir Sorunuz Varsa Lütfen Bize Ulaşın</h1>
+        </div>
+        <div class="row g-0 justify-content-center">
+            <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
+                <p class="text-center mb-4">
+                    <form asp-action="SendMessagePartial" asp-controller="ContactDefault" method="post">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" asp-for="NameSurname" placeholder="İsminiz">
+                                <label for="name">İsim Soyisim</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" asp-for="Email" placeholder="Your Email">
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" asp-for="Subject" placeholder="Konu">
+                                <label for="subject">Konu</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Leave a message here" asp-for="Content" style="height: 200px"></textarea>
+                                <label for="Content">Mesaj</label>
+                            </div>
+                        </div>
+                        <div class="col-12 text-center">
+                            <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Gönder</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

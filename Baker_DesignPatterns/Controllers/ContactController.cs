@@ -1,6 +1,7 @@
 ﻿using Baker_DesignPatterns.CQRSPattern.Commands.ContactCommands;
 using Baker_DesignPatterns.CQRSPattern.Handlers.ContactHandlers;
 using Baker_DesignPatterns.CQRSPattern.Queries.ContactQueries;
+using Baker_DesignPatterns.DAL.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Baker_DesignPatterns.Controllers
@@ -19,7 +20,8 @@ namespace Baker_DesignPatterns.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var values =_getContactQueryHandler.Handle();
+            return View(values);
         }
         public IActionResult DeleteContact(int id)
         {
@@ -31,5 +33,7 @@ namespace Baker_DesignPatterns.Controllers
             var values = _getContactByIdQueryHandler.Handle(new GetContactByIdQuery(id));
             return View(values);
         }
+
+        
     }
 }

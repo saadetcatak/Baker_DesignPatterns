@@ -1,5 +1,7 @@
 using Baker_DesignPatterns.CQRSPattern.Handlers.AboutHandlers;
+using Baker_DesignPatterns.CQRSPattern.Handlers.ContactHandlers;
 using Baker_DesignPatterns.CQRSPattern.Handlers.ProductHandlers;
+using Baker_DesignPatterns.CQRSPattern.Handlers.SubscribeHandlers;
 using Baker_DesignPatterns.CQRSPattern.Handlers.TeamHandlers;
 using Baker_DesignPatterns.DAL.Context;
 using Baker_DesignPatterns.DAL.Entities;
@@ -12,21 +14,30 @@ builder.Services.AddDbContext<BakerContext>();
 builder.Services.AddScoped<GetAboutQueryHandler>();
 builder.Services.AddScoped<GetProductQueryHandler>();
 builder.Services.AddScoped<GetTeamQueryHandler>();
+builder.Services.AddScoped<GetSubscribeQueryHandler>();
+builder.Services.AddScoped<GetContactQueryHandler>();
 builder.Services.AddScoped<CreateAboutCommandHandler>();
 builder.Services.AddScoped<CreateProductCommandHandler>();
 builder.Services.AddScoped<CreateTeamCommandHandler>();
 builder.Services.AddScoped<GetAboutByIdQueryHandler>();
 builder.Services.AddScoped<GetProductByIdQueryHandler>();
 builder.Services.AddScoped<GetTeamByIdQueryHandler>();
+builder.Services.AddScoped<GetSubscribeByIdQueryHandler>();
+builder.Services.AddScoped<GetContactByIdQueryHandler>();
 builder.Services.AddScoped<UpdateAboutCommandHandler>();
 builder.Services.AddScoped<UpdateProductCommandHandler>();
 builder.Services.AddScoped<UpdateTeamCommandHandler>();
 builder.Services.AddScoped<RemoveAboutCommandHandler>();
 builder.Services.AddScoped<RemoveProductCommandHandler>();
 builder.Services.AddScoped<RemoveTeamCommandHandler>();
+builder.Services.AddScoped<RemoveSubscribeCommandHandler>();
+builder.Services.AddScoped<RemoveContactCommandHandler>();
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<BakerContext>();
 
 
-builder.Services.AddMediatR(cfg=>cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+
 
 
 // Add services to the container.
