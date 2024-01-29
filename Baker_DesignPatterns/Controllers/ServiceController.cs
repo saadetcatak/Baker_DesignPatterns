@@ -17,7 +17,7 @@ namespace Baker_DesignPatterns.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var values =await _mediator.Send(new GetAllServiceQuery());
+            var values = await _mediator.Send(new GetAllServiceQuery());
             return View(values);
         }
 
@@ -31,7 +31,7 @@ namespace Baker_DesignPatterns.Controllers
         public async Task<IActionResult> CreateService(CreateServiceCommand command)
         {
             await _mediator.Send(command);
-           return RedirectToAction("Index");
+            return RedirectToAction("Index");
         }
 
         public async Task<IActionResult> DeleteService(int id)
@@ -43,7 +43,7 @@ namespace Baker_DesignPatterns.Controllers
         [HttpGet]
         public async Task<IActionResult> UpdateService(int id)
         {
-            var values=await _mediator.Send(new GetServiceByIdQuery(id));
+            var values = await _mediator.Send(new GetServiceByIdQuery(id));
             return View(values);
         }
 
@@ -57,7 +57,10 @@ namespace Baker_DesignPatterns.Controllers
         public async Task<IActionResult> ServiceCount(GetServiceCountQuery query)
         {
             var customerCount = await _mediator.Send(query);
+
+            
             return View(customerCount);
+            ViewBag.v1 = customerCount;
         }
     }
 }

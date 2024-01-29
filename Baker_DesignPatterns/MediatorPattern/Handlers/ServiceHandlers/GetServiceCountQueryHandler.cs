@@ -21,7 +21,9 @@ namespace Baker_DesignPatterns.MediatorPattern.Handlers.ServiceHandlers
             return new GetServiceCountQueryResults
             {
                 Count = serviceCount,
+                
             };
+            
         }
     }
 }
